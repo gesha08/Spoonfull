@@ -1,13 +1,13 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface PageLayoutProps {
   children: React.ReactNode;
   title: string;
-  emoji?: string;
   description?: string;
 }
 
-export default function PageLayout({ children, title, emoji = '🥄', description }: PageLayoutProps) {
+export default function PageLayout({ children, title, description }: PageLayoutProps) {
   return (
     <div className="flex flex-col items-center min-h-screen bg-[#FFE5E5] py-12 px-4 relative overflow-hidden">
       {/* Animated floating shapes */}
@@ -19,9 +19,18 @@ export default function PageLayout({ children, title, emoji = '🥄', descriptio
 
       <div className="relative w-full max-w-4xl mx-auto z-10">
         <div className="text-center mb-16">
+          <div className="mb-8 w-48 h-48 mx-auto relative">
+            <Image
+              src="/logo.png"
+              alt="Spoonful Logo"
+              width={192}
+              height={192}
+              priority
+              className="object-contain"
+            />
+          </div>
           <h1 className="text-6xl font-extrabold text-[#FF6B6B] mb-6 transform hover:scale-105 transition-transform duration-300">
             {title}
-            <span className="inline-block animate-bounce ml-2">{emoji}</span>
           </h1>
           {description && (
             <p className="text-xl text-[#4A4A4A] max-w-2xl mx-auto leading-relaxed">

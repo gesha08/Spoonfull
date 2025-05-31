@@ -88,7 +88,6 @@ export default function HomePage() {
   return (
     <PageLayout
       title="Welcome to Spoonful"
-      emoji="🏠"
       description="Let's get started by setting up your preferences for a better food experience."
     >
       <div className="space-y-8">
@@ -223,6 +222,15 @@ export default function HomePage() {
               </div>
             )}
           </div>
+        </div>
+
+        {/* Check Button */}
+        <div className="flex justify-center pt-8">
+          <button
+            className="bg-[#FF6B6B] hover:bg-[#FFD93D] text-white font-bold py-4 px-12 rounded-xl text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+          >
+            Check
+          </button>
         </div>
       </div>
     </PageLayout>
