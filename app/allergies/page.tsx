@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import PageLayout from '../../components/PageLayout';
+import PageLayout from '../../src/components/PageLayout';
 
 const commonAllergies = [
   { id: 'dairy', label: 'Dairy', icon: '🥛' },

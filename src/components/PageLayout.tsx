@@ -5,9 +5,10 @@ interface PageLayoutProps {
   children: React.ReactNode;
   title: string;
   description?: string;
+  emoji?: string;
 }
 
-export default function PageLayout({ children, title, description }: PageLayoutProps) {
+export default function PageLayout({ children, title, description, emoji }: PageLayoutProps) {
   return (
     <div className="flex flex-col items-center min-h-screen bg-[#FFE5E5] py-12 px-4 relative overflow-hidden">
       {/* Animated floating shapes */}
@@ -30,6 +31,7 @@ export default function PageLayout({ children, title, description }: PageLayoutP
             />
           </div>
           <h1 className="text-6xl font-extrabold text-[#FF6B6B] mb-6 transform hover:scale-105 transition-transform duration-300">
+            {emoji && <span className="inline-block mr-4 animate-bounce">{emoji}</span>}
             {title}
           </h1>
           {description && (

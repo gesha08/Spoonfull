@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const navItems = [
   { href: '/', label: 'Home', icon: '🏠' },
@@ -12,7 +12,6 @@ const navItems = [
 
 export default function Navigation() {
   const pathname = usePathname();
-  const router = useRouter();
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-lg z-50">
@@ -42,21 +41,14 @@ export default function Navigation() {
             })}
           </div>
 
-          {/* Login Button */}
-          <div className="w-[100px]">
-            <button 
-              onClick={() => router.push('/login')} 
-              className="px-4 py-2 bg-[#FF6B6B] hover:bg-[#FFD93D] text-white rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 font-bold"
+          {/* Login Button Container */}
+          <div className="w-[100px] flex justify-end">
+            <Link
+              href="/login"
+              className="text-[#4A4A4A] hover:text-[#FF6B6B] transition-colors duration-300"
             >
-              <svg 
-                viewBox="0 0 24 24" 
-                className="w-5 h-5" 
-                fill="currentColor"
-              >
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-              </svg>
-              Login
-            </button>
+              <span className="text-2xl">👤</span>
+            </Link>
           </div>
         </div>
       </div>
